@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal portfolio of a software engineer focused on backend engineering and distributed systems.">
+  <meta name="theme-color" content="#f7f7f5">
+  <title>Your Name | Software Engineer</title>
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --text: #20211f;
+      --muted: #666a63;
+      --line: #e5e6e1;
+      --accent: #315c4b;
+      --accent-soft: #e8f0eb;
+      --radius: 18px;
+      --max: 1040px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 750; text-decoration: none; letter-spacing: -.03em; }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    nav a { font-size: .93rem; color: var(--muted); text-decoration: none; }
+    nav a:hover, a:hover { color: var(--accent); }
+    .hero { padding: clamp(64px, 10vw, 118px) 0 76px; }
+    .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 6px 12px; font-size: .84rem; font-weight: 650; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    h1 { font-size: clamp(2.7rem, 7vw, 5.4rem); line-height: 1.04; letter-spacing: -.065em; max-width: 850px; margin: 24px 0; }
+    .hero p { max-width: 690px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.2rem); margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 17px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 650; font-size: .95rem; transition: transform .15s ease, background .15s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { color: #fff; background: #244738; }
+    section { padding: 66px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 220px 1fr; gap: 30px; margin-bottom: 28px; }
+    .section-head h2 { font-size: 1.05rem; letter-spacing: -.02em; margin: 5px 0; }
+    .section-head p { color: var(--muted); margin: 0; max-width: 700px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+    .card h3 { font-size: 1.05rem; margin: 0 0 8px; letter-spacing: -.025em; }
+    .card p { color: var(--muted); margin: 0; font-size: .95rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 9px; padding: 0; margin: 0; list-style: none; }
+    .tag-list li { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: .92rem; }
+    .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .project-type { color: var(--accent); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-panel { background: #edf1ed; border: 1px solid #dce5dd; border-radius: 24px; padding: clamp(24px, 5vw, 48px); display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+    .contact-panel h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); letter-spacing: -.05em; line-height: 1.12; margin: 0 0 12px; }
+    .contact-panel p { color: var(--muted); margin: 0; max-width: 540px; }
+    footer { padding: 24px 0 34px; color: var(--muted); font-size: .88rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .nav { align-items: flex-start; flex-direction: column; }
+      nav { gap: 14px; }
+      .section-head { grid-template-columns: 1fr; gap: 8px; }
+      .cards { grid-template-columns: 1fr; }
+      .contact-panel { align-items: flex-start; flex-direction: column; }
+      section { padding: 48px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home">Chandrakant Bahavr<span aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="wrap hero">
+      <span class="eyebrow"><span class="dot"></span> Open to meaningful engineering challenges</span>
+      <h1>Building reliable software for real-world problems.</h1>
+      <p>
+        Hello, I’m <strong>Chandrakant Bahavr</strong>, a lead engineer focused on backend systems,
+        APIs, and distributed applications. I enjoy turning complex problems into simple,
+        dependable solutions.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>01 / About</h2>
+          <p>
+            I care about clean code, thoughtful design, performance, and systems that are
+            easy to maintain. I work collaboratively, share knowledge, and like understanding
+            a problem before choosing the solution.
+            <br><br>
+            <strong>Personalise this paragraph</strong> with your actual experience, current role,
+            interests, and the kind of opportunities you want.
+          </p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Backend engineering</h3>
+            <p>Designing APIs and services with a focus on clarity, reliability, and performance.</p>
+          </article>
+          <article class="card">
+            <h3>Problem solving</h3>
+            <p>Breaking down difficult technical challenges and finding practical solutions.</p>
+          </article>
+          <article class="card">
+            <h3>Teamwork</h3>
+            <p>Collaborating with teams, reviewing code, and helping others grow.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>02 / Skills</h2>
+          <p>A snapshot of the technologies I work with. Remove anything you don't use and add your strongest skills.</p>
+        </div>
+        <ul class="tag-list" aria-label="Technical skills">
+          <li>Go</li><li>Java</li><li>gRPC</li><li>REST APIs</li><li>PostgreSQL</li>
+          <li>Kafka</li><li>Docker</li><li>Kubernetes</li><li>AWS</li><li>Distributed Systems</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>03 / Selected work</h2>
+          <p>Replace these examples with public projects you can discuss. Never publish confidential employer or customer information.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="project-top"><span class="project-type">Project 01</span><span aria-hidden="true">↗</span></div>
+            <h3>API Platform</h3>
+            <p>Describe an API or service you built, the problem it solved, and a measurable result. Add a project link if available.</p>
+          </article>
+          <article class="card">
+            <div class="project-top"><span class="project-type">Project 02</span><span aria-hidden="true">↗</span></div>
+            <h3>Performance Improvement</h3>
+            <p>Explain how you improved latency, throughput, reliability, or resource usage. Use only metrics you can share publicly.</p>
+          </article>
+          <article class="card">
+            <div class="project-top"><span class="project-type">Project 03</span><span aria-hidden="true">↗</span></div>
+            <h3>Cloud-native Service</h3>
+            <p>Showcase a personal or open-source project using containers, cloud infrastructure, observability, or automation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div>
+            <h2>Have a good problem to solve?</h2>
+            <p>I’m happy to connect about engineering opportunities, collaborations, or interesting ideas. Reach out by email or WhatsApp.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:bhavar.chandrakant@gmail.com">Email me</a>
+            <a class="btn" href="https://wa.me/919130491716" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year"></span> Chandrakant Bhavar. All rights reserved.</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="https://portal.dev.internetmapper.com/rum/v1/sdk-1.0.0.js" defer></script>
+<script>
+  window.addEventListener('load', function () {
+    IMRum.init({ appKey: 'rum_pk_HHxh4xmqIFqtybGy1DWJzisL9QhOyriP', endpoint: 'https://portal.dev.internetmapper.com/rum/v1/events', sampleRate: 0.1 });
+    // Nothing is collected until consent is granted. Call this from your
+    // consent manager once the visitor agrees:
+    IMRum.consent(true);
+  });
+</script>
+</body>
+</html>
