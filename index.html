@@ -205,9 +205,7 @@
     IMRum.init({ appKey: 'rum_pk_HHxh4xmqIFqtybGy1DWJzisL9QhOyriP', endpoint: 'https://portal.dev.internetmapper.com/rum/v1/events', sampleRate: 0.1 });
     // Nothing is collected until consent is granted. Call this from your
     // consent manager once the visitor agrees:
-    // IMRum.consent(true);
-    // If the visitor already agreed on an earlier visit:
-    if (visitorAllowsAnalytics()) IMRum.consent(true);
+     IMRum.consent(true);
   });
   // Call these from your consent banner's accept / withdraw callbacks.
   // visitorAllowsAnalytics() stands for your consent tool's own check.
